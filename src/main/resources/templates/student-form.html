@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+
+<form action="#" th:action="@{/student/process}" th:object="${student}">
+    <div>
+        <label>First name: <input name="firstName" th:field="*{firstName}"/></label>
+    </div>
+    <div>
+        <label>Last name: <input name="lastName" th:field="*{lastName}"/></label>
+    </div>
+    <div>
+        <label>Country:
+            <select name="country" th:field="*{country}">
+                <option th:each="country : *{countryOptions}" th:value="${country.key}"
+                        th:text="${country.value}"></option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label>Favourite programming language:
+            <input type="radio" name="Java" id="Java" value="Java" th:field="*{favouriteLanguage}"/> Java:
+            <input type="radio" name="C#" id="C#" value="C#" th:field="*{favouriteLanguage}"/> C#:
+            <input type="radio" name="Python" id="Python" value="Python" th:field="*{favouriteLanguage}"/> Python:
+            <input type="radio" name="C++" id="C++" value="C++" th:field="*{favouriteLanguage}"/> C++:
+        </label>
+    </div>
+    <div>
+        <label>Experience with :
+            <input type="checkbox" name="Linux" id="Linux" value="Linux" th:field="*{operatingSystems}"/> Linux
+            <input type="checkbox" name="Mac OS" id="Mac OS" value="Mac OS" th:field="*{operatingSystems}"/> Mac OS
+            <input type="checkbox" name="Windows" id="Windows" value="Windows" th:field="*{operatingSystems}"/> Windows
+        </label>
+    </div>
+    <label><input type="submit"/></label>
+</form>
+
+</body>
+</html>

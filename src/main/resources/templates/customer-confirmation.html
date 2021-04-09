@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Confirmation</title>
+</head>
+
+<body>
+
+<h1>Registered details</h1>
+
+<p>
+    Customer id: |<span th:text="${customer.customerId}"></span>|<br>
+    Customer name: |<span th:text="${customer.name}"></span>|<br>
+    Customer email: |<span th:text="${customer.email}"></span>|<br>
+    Customer registration date: |<span th:text="${customer.regDate}"></span>|<br>
+    Customer active: |<span th:text="${customer.active}"></span>|<br>
+    <br>
+    CustomerDetails id: |<span th:text="${customer.details.detailsId}"></span>|<br>
+    Street: |<span th:text="${customer.details.street}"></span>|<br>
+    Postcode: |<span th:text="${customer.details.postcode}"></span>|<br>
+    City: |<span th:text="${customer.details.city}"></span>|<br>
+    Home phone #: |<span th:text="${customer.details.homePhone}"></span>|<br>
+    Mobile phone #: |<span th:text="${customer.details.mobilePhone}"></span>|
+</p>
+
+</body>
+</html>
